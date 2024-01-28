@@ -1,7 +1,5 @@
 {{ .Site.Params.description | safeHTML }}
 
-<!-- {{ if .smart_email_link }} class="email-hook" id="about-email" title="Click to show email" {{end}} -->
-
 {{ range .Site.Menus.main }}
   <p class="horizontal-links">
     {{ if .Page.Params.redirect_url }}
@@ -11,3 +9,6 @@
 		{{ end }}
   </p>
 {{ end }}
+
+<!-- Here's a clever way to dynamically show the email while clicking on a link, to avoid spam bots -->
+<!-- {{ if .smart_email_link }} class="email-hook" id="about-email" title="Click to show email" {{end}} -->
