@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="{{ .Site.Author.name }}" name="author">
 
 <title>{{ if ne .Title .Site.Title }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
 
@@ -7,17 +8,4 @@
 {{ $style := resources.Get "css/rocinante.scss" | resources.ToCSS $options  }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
-{{- if isset .Site.Params "customcss" }}
-    {{ range .Site.Params.customCSS }}
-    {{ $customstyle := resources.Get . | fingerprint }}
-    <link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
-    {{ end }}
-{{- end -}}
-
-{{ with .Site.Params.favicon }}
-<link rel="shortcut icon" href="{{ . }}">
-{{ end }}
-
-{{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+{{ partial "microblog_head.html" . }}
