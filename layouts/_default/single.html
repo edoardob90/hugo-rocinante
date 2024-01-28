@@ -1,16 +1,15 @@
 {{ define "main" }}
 
-    <div class="post h-entry">
+    <div class="post" role="main">
         <div class="title-group">
             <div class="p-name">
                 <h1>{{ .Title }}</h1>
             </div>
             <div class="date"><h5>{{ .Params.date.Format "Jan 02, 2006" }}</h5></div>
         </div>
-        <article class="e-content">
+        <article class="post-content">
             {{ .Content }}
         </article>
-
     </div>
 
 {{ end }}
