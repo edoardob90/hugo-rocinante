@@ -1,14 +1,13 @@
 {{ .Site.Params.description | safeHTML }}
 
-{{ range $links := .Site.Params.links }}
+<!-- {{ if .smart_email_link }} class="email-hook" id="about-email" title="Click to show email" {{end}} -->
+
+{{ range .Site.Menus.main }}
   <p class="horizontal-links">
-    {{- range $links.link -}}
-      <a href="{{ .href }}"
-       {{ if .new_tab }} target="_blank" {{end}}
-       {{ if .smart_email_link }} class="email-hook" id="about-email" title="Click to show email" {{end}}
-      >
-        {{- .name -}}
-      </a>
-    {{- end -}}
+    {{ if .Page.Params.redirect_url }}
+			<a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+		{{ else }}
+			<a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+		{{ end }}
   </p>
 {{ end }}
