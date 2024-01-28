@@ -1,4 +1,4 @@
-{{ .Site.Params.about | .RenderString }}
+{{ .Site.Params.description | safeHTML }}
 
 {{ range $links := .Site.Params.links }}
   <p class="horizontal-links">
