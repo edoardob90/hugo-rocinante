@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+    <div class="post h-entry">
+        <div class="title-group">
+            {{ with .Title }}
+                <div class="p-name">
+                    <h1>{{ . }}</h1>
+                </div>
+            {{ end }}
+            <div class="date"><h5>{{ .Params.date.Format "Jan 02, 2006" }}</h5></div>
+        </div>
+        <article class="e-content">
+            {{ .Content }}
+        </article>
+        {{ with .Params.categories }}
+            <div class="tags post-tags">
+                <span title="Tags">🏷</span>
+                <div class="horizontal-links links">
+                    {{ range . }}{{ with $.Site.GetPage (printf "/categories/%s" ( . | urlize)) }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+                </div>
+            </div>
+        {{ end }}
+    </div>
+
+{{ end }}
