@@ -9,14 +9,20 @@
       {{- block "main" . }}{{- end }}
     </main>
     <footer>
-      {{- partial "footer.html" . -}}
+      {{- partial "footer.html" . }}
+      {{ partial "custom_footer.html" . -}}
     </footer>
     {{ $js := resources.Get "js/rocinante.js" | resources.Minify }}
-    <script>
+
+    <!-- <script>
       const emailId = atob({{.Param "email" | base64Encode}});
     </script>
     {{- if isset .Site.Params "email" }}
       <script src="{{ $js.RelPermalink }}"></script>
-    {{- end -}}
+    {{- end -}} -->
+    
+    {{ range .Site.Params.plugins_js }}
+			<script src="{{ . }}"></script>
+		{{ end }}
   </body>
 </html>
