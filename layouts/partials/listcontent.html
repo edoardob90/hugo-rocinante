@@ -1,13 +1,15 @@
 <div class="posts h-feed">
     {{ range .Paginator.Pages }}
-    <article class="post-preview h-entry">
+    <article class="post-list post-preview h-entry">
         <div class="title-group">
             {{ with .Title }}
             <div class="post-title p-name">
                 <h1><a href="{{ $.RelPermalink }}">{{ . }}</a></h1>
             </div>
             {{ end }}
-            <div class="post-date"><h5>{{ .Date.Format "Jan 02, 2006" }}</h5></div>
+            <div class="post-date">
+                <h5><a href="{{ .RelPermalink }}" class="u-url">{{ .Date.Format "Jan 02, 2006" }}</a></h5>
+            </div>
         </div class="title-group">
 
         <div class="p-summary">
