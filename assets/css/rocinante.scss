@@ -280,6 +280,8 @@ footer {
   margin: 2em 0;
   .disabled {
     color: #aaa;
+    text-decoration: none;
+    cursor: not-allowed;
   }
   .newer {
     float: right;

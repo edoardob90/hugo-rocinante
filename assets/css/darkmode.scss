@@ -3,9 +3,12 @@
   body {
     background-color: #1a1a1a;
     color: #f8f8f2;
-    .post-list h1 a,
-    .post-list h1 a:hover {
-      color: #f8f8f2;
+    .post-list {
+      h1 a,
+      h5 a,
+      h1 a:hover {
+        color: #f8f8f2;
+      }
     }
     a {
       color: #aaa;
