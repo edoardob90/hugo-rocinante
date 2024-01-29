@@ -337,23 +337,37 @@ footer {
 ul.reply-buttons {
   list-style-type: none;
   padding: 0;
+  
   & > li {
     display: inline;
-    margin-right: 0.2em;
+    margin: 0 0.2em;
     white-space: nowrap;
+  }
+  
+  & > li:first-child {
+    margin-left: 0;
+  }
+  
+  & > li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.2em;
+    
+    &:hover {
+      border-radius: 2px;
+      background: #ccc;
+    }
   }
 }
 
 input[type=submit],
 button {
   background: none;
+  color: #333;
   cursor: pointer;
   border: none;
-}
-
-input[type=submit]:hover,
-button:hover {
-  background: #ccc;
+  border-radius: 2px;
+  vertical-align: baseline;
 }
 
 @import 'darkmode';
