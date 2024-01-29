@@ -227,12 +227,14 @@ footer {
   width: 100%;
   margin-top: 0;
   margin-bottom: 0.25em;
-  a {
+  a,
+  button {
     border-right: 2px solid #ccc;
     padding-right: 0.6em;
     margin-right: 0.3em;
   }
-  a:last-child {
+  a:last-child,
+  button:last-child {
     border: none;
   }
   &:last-child {
