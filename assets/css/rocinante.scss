@@ -227,14 +227,12 @@ footer {
   width: 100%;
   margin-top: 0;
   margin-bottom: 0.25em;
-  a,
-  button {
+  a {
     border-right: 2px solid #ccc;
     padding-right: 0.6em;
     margin-right: 0.3em;
   }
-  a:last-child,
-  button:last-child {
+  a:last-child {
     border: none;
   }
   &:last-child {
@@ -330,6 +328,32 @@ footer {
       grid-column-end: 3;
     }
   }
+}
+
+.reply-buttons {
+  margin-top: 1.25em;
+}
+
+ul.reply-buttons {
+  list-style-type: none;
+  padding: 0;
+  & > li {
+    display: inline;
+    margin-right: 0.2em;
+    white-space: nowrap;
+  }
+}
+
+input[type=submit],
+button {
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+input[type=submit]:hover,
+button:hover {
+  background: #ccc;
 }
 
 @import 'darkmode';

@@ -23,20 +23,20 @@
     </div>
 
     {{ if or (templates.Exists "partials/reply-by-email.html") (templates.Exists "partials/conversation-link.html") (templates.Exists "partials/plugin_tinylytics.html") (templates.Exists "partials/reply-on-mastodon.html") -}}
-        <p class="reply-buttons horizontal-links">
+        <ul class="reply-buttons">
             {{ if templates.Exists "partials/plugin_tinylytics.html" }}
-                <button class="tinylytics_kudos">Kudos</button>
+            <li><button class="tinylytics_kudos">Kudos</button></li>
             {{ end }}
             {{ if templates.Exists "partials/reply-by-email.html" }}
-                {{- partial "reply-by-email.html" . -}}
+            <li>{{- partial "reply-by-email.html" . -}}</li>
             {{ end }}
             {{ if templates.Exists "partials/conversation-link.html" }}
-                {{- partial "conversation-link.html" . -}}
+            <li>{{- partial "conversation-link.html" . -}}</li>
             {{ end }}
             {{ if templates.Exists "partials/reply-on-mastodon.html" }}
-                {{- partial "reply-on-mastodon.html" . -}}
+            <li>{{- partial "reply-on-mastodon.html" . -}}</li>
             {{ end }}
-        </p>
+        </ul>
     {{ end -}}
 
     {{- if .Params.bluesky }}
