@@ -12,12 +12,18 @@
             </div>
         </div class="title-group">
 
-        <div class="p-summary">
-            {{ .Summary | safeHTML }}
-        </div>
+        {{ if .Title }}
+            <div class="p-summary">
+                {{ .Summary | safeHTML }}
+            </div>
         {{ if .Truncated }}
             <div class="read-more">
                 <a href="{{ .RelPermalink }}">Read more ›</a>
+            </div>
+        {{ end }}
+        {{ else }}
+            <div class="e-content">
+                {{ .Content }}
             </div>
         {{ end }}
 
