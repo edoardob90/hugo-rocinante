@@ -1,0 +1,12 @@
+{
+    "version": "0.1.0",
+    "title": "Rocinante Theme",
+    "description": "A Hugo theme ported for the Micro.blog platform.",
+    "fields": [
+        {
+            "field": "params.read_more_text",
+            "label": "Read More Text",
+            "type": "text"
+        }
+    ]
+}

@@ -18,7 +18,7 @@
             </div>
         {{ if .Truncated }}
             <div class="read-more">
-                <a href="{{ .RelPermalink }}">Read more ›</a>
+                <a href="{{ .RelPermalink }}">{{ .Site.Params.read_more_text | safeHTML }}</a>
             </div>
         {{ end }}
         {{ else }}
