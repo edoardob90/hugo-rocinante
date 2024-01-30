@@ -4,7 +4,7 @@
 body {
   font-family: var(--font_system_ui), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333;
-  font-size: 16px;
+  font-size: clamp(1rem, 0.34vw + 0.91rem, 1.2rem);
   line-height: 1.6;
 }
 
