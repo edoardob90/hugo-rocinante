@@ -172,10 +172,9 @@ header h2 {
   a {
     text-decoration: none;
     border: none;
-    color: #77f !important;
 
     &:hover {
-      color: #f77 !important;
+      color: #459dc9 !important;
     }
 
     &:active {
@@ -358,6 +357,10 @@ ul.reply-buttons {
       background: #ccc;
     }
   }
+}
+
+nav.main-nav {
+  margin-top: 1em;
 }
 
 input[type=submit],
