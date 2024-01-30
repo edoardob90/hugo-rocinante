@@ -172,14 +172,6 @@ header h2 {
   a {
     text-decoration: none;
     border: none;
-
-    &:hover {
-      color: #459dc9 !important;
-    }
-
-    &:active {
-      color: #2a2 !important;
-    }
   }
 }
 
@@ -365,6 +357,7 @@ nav.main-nav {
 
 input[type=submit],
 button {
+  font-family: inherit;
   background: none;
   color: #333;
   cursor: pointer;
