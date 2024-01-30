@@ -3,26 +3,33 @@
   body {
     background-color: #1a1a1a;
     color: #f8f8f2;
+    
     .post-list {
       h1 a,
-      h5 a,
-      h1 a:hover {
+      h5 a {
         color: #f8f8f2;
+
+        &:hover {
+          color: #f0e760;
+        }
       }
     }
+    
     a {
       color: #aaa;
       &:hover {
         color: #888;
-        text-decoration: underline;
       }
     }
+    
     code {
       background: #333;
     }
+    
     blockquote {
       color: white;
     }
+    
     footer .content-container {
       background: #333;
     }
