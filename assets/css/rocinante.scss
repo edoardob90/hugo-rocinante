@@ -6,7 +6,7 @@ body {
   font-family: var(--font_system_ui), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--background-color);
   color: var(--text-color);
-  font-size: unquote("clamp(1rem, 0.34vw + 0.91rem, 1.2rem)");
+  font-size: unquote("clamp(1rem, 0.76rem + 1vw, 1.25rem)");
   line-height: 1.6;
 }
 
@@ -308,9 +308,6 @@ footer {
 }
 
 @media (max-width:400px) {
-  body {
-    font-size: 14px;
-  }
   .album .photos {
     grid-template-columns: 1fr;
     a {
