@@ -269,7 +269,7 @@ footer {
 .paginator {
   margin: 2em 0;
   .disabled {
-    color: var(--divider-line-color-alt);
+    color: var(--disabled-element-color);
     text-decoration: none;
     cursor: not-allowed;
   }
@@ -369,6 +369,6 @@ button {
   // Tinylytics button
   &.did_select {
     cursor: not-allowed;
-    color: var(--link-hover-color);
+    color: var(--disabled-element-color);
   }
 }
