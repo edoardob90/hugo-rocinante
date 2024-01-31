@@ -6,7 +6,7 @@ body {
   font-family: var(--font_system_ui), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--background-color);
   color: var(--text-color);
-  font-size: clamp(1rem, 0.34vw + 0.91rem, 1.2rem);
+  font-size: unquote("clamp(1rem, 0.34vw + 0.91rem, 1.2rem)");
   line-height: 1.6;
 }
 
@@ -94,7 +94,6 @@ pre, code {
 code {
   font-size: 0.9em;
   padding: 0.25em 0.5em;
-  // color: #9E525A;
 }
 pre code {
   display: block;
@@ -331,7 +330,7 @@ ul.reply-buttons {
   
   & > li {
     display: inline;
-    margin: 0 0.2em;
+    margin: 0 0.5em;
     white-space: nowrap;
   }
   
@@ -359,9 +358,17 @@ button {
   border: none;
   border-radius: 2px;
   vertical-align: baseline;
+}
 
+button {
   &:hover {
     color: var(--link-hover-color);
     transition: color 0.1s ease;
+  }
+  
+  // Tinylytics button
+  &.did_select {
+    cursor: not-allowed;
+    color: var(--link-hover-color);
   }
 }
