@@ -1,9 +1,11 @@
 @import 'includes';
 @import 'fonts';
+@import 'colors';
 
 body {
   font-family: var(--font_system_ui), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-size: clamp(1rem, 0.34vw + 0.91rem, 1.2rem);
   line-height: 1.6;
 }
@@ -52,11 +54,11 @@ h4, h5, h6 {
 }
 
 a {
-  color: #196185;
+  color: var(--link-color);
   transition: color 0.1s ease;
 
   &:hover {
-    color: #65add1;
+    color: var(--link-hover-color);
   }
 }
 
@@ -82,7 +84,7 @@ dd {
 hr {
   margin: 2em 0;
   border: 0;
-  border-top: 2px dotted #aaa;
+  border-top: 2px dotted var(--divider-line-color-alt);
 }
 
 pre, code {
@@ -90,13 +92,11 @@ pre, code {
   border-radius: 3px;
 }
 code {
-  // background: #f9f9f9;
   font-size: 0.9em;
   padding: 0.25em 0.5em;
-  color: #9E525A;
+  // color: #9E525A;
 }
 pre code {
-  // background: #f9f9f9;
   display: block;
   margin: 1em 0;
   padding: 0.75em 1em;
@@ -124,26 +124,26 @@ figcaption {
   }
   text-align: center;
   font-size: 0.9em;
-  color: #666;
+  color: var(--blockquote-color);
 }
 
 blockquote {
   padding-left: 1.25em;
   padding-right: 1.5em;
-  border-left: .25em solid #eee;
-  color: #666;
+  border-left: .25em solid var(--footer-background-color);
+  color: var(--blockquote-color);
 }
 
 table {
   margin-bottom: 1em;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--table-border-color);
 }
 
 td, th {
   vertical-align: middle;
   padding: .25rem .5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--table-border-color);
 }
 
 th {
@@ -151,7 +151,7 @@ th {
 }
 
 tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th {
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
 }
 
 sup, sub {
@@ -195,7 +195,7 @@ header h2 {
     margin-bottom: 0.5em;
   }
   .date h5 {
-    color: #888;
+    color: var(--datetime-color);
     margin: 0;
   }
   margin-bottom: 1.5em;
@@ -204,7 +204,7 @@ header h2 {
 footer {
   margin-top: 3em;
   .content-container {
-    background: #eee;
+    background: var(--footer-background-color);
     padding: 2em 0;
     .content {
       max-width: 740px;
@@ -219,7 +219,7 @@ footer {
   margin-top: 0;
   margin-bottom: 0.25em;
   a {
-    border-right: 2px solid #ccc;
+    border-right: 2px solid var(--divider-line-color);
     padding-right: 0.6em;
     margin-right: 0.3em;
   }
@@ -234,12 +234,12 @@ footer {
 .post-list {
   h1 a,
   h5 a {
-    color: #333;
+    color: var(--datetime-color);
     text-decoration: none;
     border: none;
 
     &:hover {
-      color: #459dc9;
+      color: var(--datetime-hover-color);
     }
   }
   .read-more {
@@ -247,7 +247,7 @@ footer {
   }
 
   padding-bottom: 1em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--divider-line-color);
 }
 
 .tags {
@@ -256,11 +256,11 @@ footer {
     display: inline;
     margin-left: 0.5em;
     a {
-      color: #aaa;
+      color: var(--link-color-alt);
       text-decoration: none;
       border-bottom: none;
       &:hover {
-        color: #888;
+        color: var(--link-color-alt-hover);
         text-decoration: underline;
       }
     }
@@ -270,7 +270,7 @@ footer {
 .paginator {
   margin: 2em 0;
   .disabled {
-    color: #aaa;
+    color: var(--divider-line-color-alt);
     text-decoration: none;
     cursor: not-allowed;
   }
@@ -281,7 +281,7 @@ footer {
 }
 
 .current-page {
-  color: #aaa;
+  color: var(--divider-line-color-alt);
 }
 
 .album {
@@ -289,8 +289,8 @@ footer {
     display: inline;
   }
   .location {
-    color: #888;
-    border-left: solid 2px #ccc;
+    color: var(--album-location-color);
+    border-left: solid 2px var(--divider-line-color);
     padding-left: 1em;
     margin-left: 1em;
   }
@@ -322,7 +322,7 @@ footer {
 }
 
 .reply-buttons {
-  margin-top: 1.25em;
+  margin-top: 2em;
 }
 
 ul.reply-buttons {
@@ -341,13 +341,7 @@ ul.reply-buttons {
   
   & > li a {
     text-decoration: none;
-    color: #333;
     padding: 0.2em;
-    
-    &:hover {
-      border-radius: 2px;
-      background: #ccc;
-    }
   }
 }
 
@@ -358,12 +352,16 @@ nav.main-nav {
 input[type=submit],
 button {
   font-family: inherit;
+  font-size: inherit;
   background: none;
-  color: #333;
+  color: var(--input-color);
   cursor: pointer;
   border: none;
   border-radius: 2px;
   vertical-align: baseline;
-}
 
-@import 'darkmode';
+  &:hover {
+    color: var(--link-hover-color);
+    transition: color 0.1s ease;
+  }
+}
