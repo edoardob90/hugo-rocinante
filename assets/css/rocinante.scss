@@ -10,8 +10,12 @@ body {
   line-height: 1.6;
 }
 
-p {
+article p {
   margin: 1.25em 0;
+}
+
+article p:last-of-type {
+  margin-bottom: 0.5em;
 }
 
 em, i {
@@ -251,6 +255,8 @@ footer {
 
 .tags {
   font-size: 0.9em;
+  margin-top: 2em;
+  margin-bottom: 1em;
   .links {
     display: inline;
     margin-left: 0.5em;
