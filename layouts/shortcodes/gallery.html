@@ -1,0 +1,22 @@
+{{- $photos := split .Get "photos" " " -}}
+{{- $style := default "grid" (.Get "style") }}
+
+{{- if (eq $style "grid") -}}
+    <div class="photos-grid photos-grid--style-grid">
+        {{ range $photo_url := $photos }}
+            {{ with resources.GetRemote $photo_url }}
+                <a href="{{ $photo_url }}" class="photos-grid__item">
+                    <img
+                    src="https://micro.blog/photos/1000x/{{ .RelPermalink }}"
+                    width="{{ .Width }}"
+                    height="{{ .Height }}"
+                    alt=""
+                    loading="lazy"
+                    />
+                </a>
+            {{ else }}
+                {{ errorf "Failed to get remote image %q" $photo_url }}
+            {{ end }}
+        {{ end }}
+    </div>
+{{- end -}}
